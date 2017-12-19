@@ -37,6 +37,13 @@ int main(int argc, char *argv[]) {
 		if (i >= w && rand()/2147483647.0*100<perc) {
 			buffer = rand()/2147483647.0*255-128;
 		}
+		if (i % (long)(0.05*filelen) == 0) {
+			if (filelen > 1048576) {
+				printf("Progress: %f%% (%dMB / %dMB)\n", 100.0*i/filelen, i/1024/1024, filelen/1024/1024);
+			} else {
+				printf("Progress: %f%% (%dB / %dB)\n", 100.0*i/filelen, i, filelen);
+			}
+		}
 		fwrite(&buffer,1,1,outfile);
 	}
 	printf("Done!\n");
