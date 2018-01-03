@@ -1,5 +1,5 @@
 # FileScrabler
-A program to randomly change files
+A small program to make random changes to files
 
 ## Compilation
 Download source with `git clone https://github.com/AndyKolski/FileScrambler.git`
